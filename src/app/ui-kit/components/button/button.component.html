@@ -1,0 +1,8 @@
+<button class="m-1 px-5 rounded border-2 flex items-center text-bright disabled:text-shade hover:scale-110 duration-500"
+  [disabled]="disabled" [ngClass]="[classes]">
+  <app-ui-typography [type]="textType">
+    <ng-content></ng-content>
+  </app-ui-typography>
+  <svg-icon [src]="imageSrc" class="px-1" *ngIf="iconPosition!='none'"
+    [svgStyle]="iconStyles"></svg-icon>
+</button>

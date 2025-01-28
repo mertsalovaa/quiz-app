@@ -1,0 +1,26 @@
+/* cSpell:disable */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@font-face {
+  font-display: swap;
+  font-family: IBMPlexSans;
+  font-style: normal;
+  font-weight: 400;
+  src: url('../assets/fonts/IBMPlexSans.woff') format('woff');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: IBMPlexSans;
+  font-style: normal;
+  font-weight: 600;
+  src: url('../assets/fonts/IBMPlexSans-SemiBold.woff') format('woff');
+}
+
+body {
+  font-family: IBMPlexSans;
+  height: 100%;
+  margin: 0;
+}

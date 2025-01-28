@@ -1,0 +1,10 @@
+<div class='w-full flex lg:py-3 max-lg:py-1.5'>
+  <span [class]="iconClass + ' block w-10 h-10 rounded mx-2'"></span>
+  <span>
+    <span class='flex items-end max-md:flex-wrap'>
+      <app-ui-typography type="P1" class='text-primary pr-1.5'>{{ value }}</app-ui-typography>
+      <ng-content></ng-content>
+    </span>
+    <app-ui-typography type="Label" class='text-secondary'>{{ label }}</app-ui-typography>
+  </span>
+</div>

@@ -1,0 +1,9 @@
+<div class="radio-group flex flex-col max-md:items-start lg:items-start">
+  <ng-container *ngFor="let option of options">
+    <app-ui-radio-button 
+      [text]="option" 
+      [control]="formControl" 
+    />
+  </ng-container>
+</div>
+<app-ui-notification class="absolute inset-2" *ngIf="isNotification$.value" />

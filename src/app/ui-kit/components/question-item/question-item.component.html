@@ -1,0 +1,41 @@
+<div class="bg-success px-7 py-10 rounded-3xl flex flex-col items-center justify-between lg:min-h-[550px]">
+  <div class="w-full flex items-start justify-between">
+    <span class="flex items-center">
+      <app-ui-typography type="H5" highlightText="framed" highlightColor="bg-warning">{{id}}</app-ui-typography>
+      <app-ui-typography type="P1" class="text-bright ml-2">/{{size}}</app-ui-typography>
+    </span>
+
+    <span class="flex">
+      <ng-container *ngFor="let item of images">
+        <svg-icon svgClass="lg:w-20 lg:h-20 max-lg:w-16 max-lg:h-16 object-cover" [src]="item"></svg-icon>
+      </ng-container>
+    </span>
+  </div>
+
+  <app-ui-typography class="w-full flex justify-start text-bright/90 underline underline-offset-4 pt-3" type="H6">{{item.category}}</app-ui-typography>
+  <span class="w-full flex text-bright items-center justify-start flex-wrap *:mr-2 py-6">
+    <app-ui-typography class="mr-2" type="H4">{{getFormattedText().start}}</app-ui-typography>
+    <app-ui-typography type="H4" highlightText="framed"
+      highlightColor="bg-error">{{getFormattedText().middle}}</app-ui-typography>
+    <app-ui-typography type="H4">{{getFormattedText().end}}</app-ui-typography>
+  </span>
+
+  <form class="max-md:w-full lg:min-w-2/5">
+    <app-ui-radio-group 
+      #radioGroup
+      [options]="options" 
+      [setFormControl]="selectedAnswer" 
+      (getSelectedAnswer)="setSelectedAnswer($event)" />
+  </form>
+
+  <div class="flex items-center w-full pt-10" [ngClass]="id == 1 ? 'justify-end' : 'justify-between'">
+    <app-ui-button *ngIf="id != 1" class="*:bg-accent/15" (click)="handlePrev()" type="ghost" iconState="prev">
+      <span class="max-sm:hidden sm:block">{{buttonTextLg.prev}}</span>
+      <span class="max-sm:block sm:hidden">{{buttonTextSm.prev}}</span>
+    </app-ui-button>
+    <app-ui-button (click)="handleNext()" type="accent" iconState="next">
+      <span class="max-sm:hidden sm:block">{{buttonTextLg.next}}</span>
+      <span class="max-sm:block sm:hidden">{{buttonTextSm.next}}</span>
+    </app-ui-button>
+  </div>
+</div>

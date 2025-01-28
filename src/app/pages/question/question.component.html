@@ -1,0 +1,28 @@
+<div class="absolute inset-x-0 top flex flex-col items-center justify-between min-h-fit w-full bg-primary pb-8">
+  <div class="first:text-bright flex items-center *:p-1.5 pb-3 flex-wrap justify-center text-center w-3/4">
+    <app-ui-typography type='H2'>Emoji Bands </app-ui-typography>
+    <app-ui-typography type='H3'>Quiz</app-ui-typography>
+    <app-ui-typography type='H2' highlightText="ellipse">.</app-ui-typography>
+  </div>
+  <app-ui-typography type="P1" class="text-bright lg:w-3/12 max-md:w-9/12 pb-5 text-center flex justify-center">Can you decipher these emoji clues to answer these music-related questions?</app-ui-typography>
+  <app-ui-link class="lg:absolute lg:left-3 mb-4" link="/quizzes-catalog">
+    <app-ui-button size="md" type="accent" iconState="prev">Go to catalog</app-ui-button>
+  </app-ui-link>
+  
+  <app-ui-question-item 
+    [id]="id" 
+    [item]="(currentQuestion$ | async)!" 
+    (next)="nextQuestion()" 
+    (prev)="prevQuestion()" 
+    (getSelectedAnswer)="setSelectedAnswer($event)"
+    [options]="(options | async)!"
+    [selectedAnswer]="answers$.getValue()[currentIndex$.value]"
+    class="lg:w-1/2 md:w-2/3 max-md:w-10/12" />
+
+</div>
+<app-ui-spinner [show]="!!(isLoading$ | async)" />
+<app-ui-modal-window 
+  *ngIf="(modalWindowState$ | async)" 
+  (confirm)="handleModalResponse($event)" 
+  [data]="(modalWindowData$ | async)!"
+/>

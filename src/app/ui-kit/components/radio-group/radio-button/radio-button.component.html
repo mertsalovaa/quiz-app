@@ -1,0 +1,6 @@
+<span class="radio flex items-center m-1.5" >
+  <input class="opacity-0 absolute peer" id="radio-{{text}}" name="radio" [value]="text" [formControl]="control" type="radio">
+  <label for="radio-{{text}}" class="radio__label flex before:radio-before hover:cursor-pointer peer-checked:text-bright peer-focus:text-bright peer-focus:before:border-error peer-focus:before:outline-none peer-checked:radio-before-checked">
+    <app-ui-typography>{{text}}</app-ui-typography>
+  </label>
+</span> 

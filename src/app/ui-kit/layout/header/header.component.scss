@@ -1,0 +1,36 @@
+.nav-item-animation {
+  &:before {
+    background-color: theme('colors.muted');
+    border-radius: 4px;
+    bottom: -3px;
+    content: '';
+    height: 2px;
+    left: 0;
+    position: absolute;
+    transform-origin: right;
+    transition: width 0.6s ease-in-out;
+    width: 0;
+  }
+
+  &:after {
+    background-color: transparent;
+    bottom: 0;
+    content: '';
+    height: 2px;
+    position: absolute;
+    right: 100%;
+    transform-origin: right;
+    transition: width 0.6s ease-in-out;
+    width: 0;
+  }
+
+  &:hover {
+    &:before {
+      width: 100%;
+    }
+
+    &:after {
+      width: 100%;
+    }
+  }
+}
