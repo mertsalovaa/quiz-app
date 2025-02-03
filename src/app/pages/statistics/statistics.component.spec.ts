@@ -5,14 +5,14 @@ import { UIKitModule } from '../../ui-kit/ui-kit.module';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { provideMockStore } from '@ngrx/store/testing';
 import { provideRouter } from '@angular/router';
-import { StatisticService } from '../../services/statistics.service';
+import { StatisticService } from '../../services/statistics/statistics.service';
 import { CHART_DATA } from '../../test-data/chart.data';
-import { QuizResultModel } from '../../services/model/quiz-result.model';
+import { QuizResultModel } from '../../services/statistics/quiz-result.model';
 import { isComponentExist } from '../quizzes-catalog/quizzes-catalog.component.spec';
 import { TypographyComponent } from '../../ui-kit/components/typography/typography.component';
 import { ButtonComponent } from '../../ui-kit/components/button/button.component';
 import { LinkComponent } from '../../ui-kit/components/link/link.component';
-import { StatisticCardComponent } from '../../ui-kit/components/statistic-card/statistic-card.component';
+import { StatisticCardComponent } from '../../components/statistic-card/statistic-card.component';
 import { ChartRatingComponent } from '../../ui-kit/components/chart-rating/chart-rating.component';
 
 export const testQuizResult: QuizResultModel = {

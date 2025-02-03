@@ -1,7 +1,7 @@
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { ChartComponent } from 'ng-apexcharts';
-import { ChartOptions, createChartOptions, QuestionTypeModel } from '../../constants/chart.options';
-import { ChartModel } from '../../../services/model/chart.modal';
+import { ChartOptions, createChartOptions, QuestionTypeModel } from './chart-rating.contants';
+import { ChartModel } from '../../../services/statistics/chart.modal';
 
 @Component({
   selector: 'app-ui-chart-rating',

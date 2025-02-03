@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { ModalWindowModel } from '../../../services/model/modal.model';
+import { ModalWindowModel } from '../../../services/modal-window/modal.model';
 
 @Component({
   selector: 'app-ui-modal-window',

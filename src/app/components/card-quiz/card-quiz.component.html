@@ -1,0 +1,14 @@
+<app-ui-link link="/quiz/{{id}}">
+  <div class=" rounded-2xl p-5 mx-2 my-3 w-64 min-h-60" [ngClass]="styles.bgColor">
+    
+    <div class="flex items-center justify-between">
+      <app-ui-typography type="P2">10 questions</app-ui-typography>
+      <svg-icon [src]="styles.icon" [svgStyle]="{ 'width.px': 48, 'height.px': 48, }" class="px-1"></svg-icon>
+    </div>
+
+    <app-ui-typography type="H6" [ngClass]="[
+    styles.textColor, 
+    styles.textColor === 'text-primary' ? 'hover:text-accent' : 'hover:text-warning' 
+  ]">{{name}}</app-ui-typography>
+  </div>
+</app-ui-link>

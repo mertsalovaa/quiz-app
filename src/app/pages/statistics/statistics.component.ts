@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { UIKitModule } from '../../ui-kit/ui-kit.module';
 import { QUESTIONS_SIZE } from '../../utils/constants';
-import { ChartModel } from '../../services/model/chart.modal';
-import { StatisticService } from '../../services/statistics.service';
-import { QuizResultModel } from '../../services/model/quiz-result.model';
+import { ChartModel } from '../../services/statistics/chart.modal';
+import { StatisticService } from '../../services/statistics/statistics.service';
+import { QuizResultModel } from '../../services/statistics/quiz-result.model';
 import { chartDataText } from '../../test-data/chart.data';
 
 @Component({

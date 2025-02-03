@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { TextTypes, textTypesClasses } from '../../constants/text-types';
+import { TextTypes, textTypesClasses } from './typography.constants';
 
 @Component({
   selector: 'app-ui-typography',

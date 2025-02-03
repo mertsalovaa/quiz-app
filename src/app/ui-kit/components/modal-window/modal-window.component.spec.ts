@@ -4,15 +4,13 @@ import { DebugElement } from '@angular/core';
 import { ButtonComponent } from '../button/button.component';
 import { TypographyComponent } from '../typography/typography.component';
 import { By } from '@angular/platform-browser';
-import { ModalWindowModel } from '../../../services/model/modal.model';
-import { DEFAULT_MODAL_DATA } from '../../../utils/modal-data.constants';
+import { ModalWindowModel } from '../../../services/modal-window/modal.model';
+import { DEFAULT_MODAL_DATA } from '../modal-window/modal-window.constants';
 
 describe('ModalWindowComponent', () => {
   let component: ModalWindowComponent;
   let fixture: ComponentFixture<ModalWindowComponent>;
   let debugElement: DebugElement;
-
-  const mockData: ModalWindowModel = DEFAULT_MODAL_DATA;
 
   beforeEach(async() => {
     await TestBed.configureTestingModule({

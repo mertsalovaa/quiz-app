@@ -5,15 +5,18 @@ import {
   CardColors,
   CardItemStyle,
   cardItemStyles,
-} from '../../ui-kit/constants/card-item';
-import { CategoryModel } from '../../services/model/category.model';
+} from '../../components/card-quiz/card-quiz.constants';
+import { CategoryModel } from '../../services/category/category.model';
 import { Observable } from 'rxjs';
-import { StoreService } from '../../services/store.service';
+import { StoreService } from '../../../app/store/service/store.service';
+import { CategoryService } from '../../services/category/category.service';
+import { TOTAL_QUIZZES_COUNT } from '../../utils/constants';
 
 @Component({
   standalone: true,
   selector: 'app-quizzes-catalog',
   templateUrl: './quizzes-catalog.component.html',
+  providers: [CategoryService],
   imports: [ UIKitModule, CommonModule ],
 })
 export class QuizzesCatalogComponent implements OnInit {
@@ -29,7 +32,7 @@ export class QuizzesCatalogComponent implements OnInit {
   }
   
   getCardStyle(index: number): CardItemStyle {
-    const styleIndex = index + Math.floor(index / 5);
+    const styleIndex = index + Math.floor(index / (TOTAL_QUIZZES_COUNT / 2));
     const enumValues = Object.values(CardColors);
     return cardItemStyles[enumValues[styleIndex % enumValues.length]];
   }

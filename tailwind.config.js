@@ -31,12 +31,24 @@ module.exports = {
           width: '1.4em',
           'margin-right': '10px',
           'text-align': 'center',
-          transition:' all 250ms ease',
+          transition: ' all 250ms ease',
         },
         '.radio-before-checked:before': {
           'background-color': 'theme("colors.error")',
           'border-color': 'theme("colors.error")',
           'box-shadow': 'inset 0 0 0 4px theme("colors.bright")',
+        },
+        ':root:has(.no-doc-scroll)': {
+          overflow: 'hidden',
+        },
+        '.tooltipStyles': {
+          padding: '10px',
+          display: 'flex',
+          'align-items': 'center',
+          p: {
+            'font-weight': 'bold',
+            'padding-left': '5px',
+          }
         }
       });
     }),

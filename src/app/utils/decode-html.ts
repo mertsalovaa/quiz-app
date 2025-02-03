@@ -1,4 +1,4 @@
-import { QuestionModel } from '../services/model/question.model';
+import { QuestionModel } from '../services/question/question.model';
 
 export function decodeText(html: string): string {
   const parser = new DOMParser();

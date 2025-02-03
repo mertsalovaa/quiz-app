@@ -1,4 +1,4 @@
-import { ChartModel } from '../services/model/chart.modal';
+import { ChartModel } from '../services/statistics/chart.modal';
 
 export const CHART_DATA: ChartModel = {
   quizzesCount: 67,

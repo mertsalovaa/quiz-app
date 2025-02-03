@@ -1,6 +1,6 @@
 import { Component, DebugElement } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { TextTypes, textTypesClasses } from '../../constants/text-types';
+import { TextTypes, textTypesClasses } from './typography.constants';
 import { TypographyComponent } from './typography.component';
 import { By } from '@angular/platform-browser';
 import { expect, jest, test } from '@jest/globals';

@@ -5,22 +5,22 @@ import { UIKitModule } from '../../ui-kit/ui-kit.module';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { provideRouter, Router, RouterStateSnapshot } from '@angular/router';
 import { provideMockStore } from '@ngrx/store/testing';
-import { QuestionItemComponent } from '../../ui-kit/components/question-item/question-item.component';
+import { QuestionItemComponent } from '../../components/question-item/question-item.component';
 import { isComponentExist } from '../quizzes-catalog/quizzes-catalog.component.spec';
 import { TypographyComponent } from '../../ui-kit/components/typography/typography.component';
 import { ButtonComponent } from '../../ui-kit/components/button/button.component';
 import { LinkComponent } from '../../ui-kit/components/link/link.component';
 import { SpinnerComponent } from '../../ui-kit/components/spinner/spinner.component';
 import { ModalWindowComponent } from '../../ui-kit/components/modal-window/modal-window.component';
-import { StoreService } from '../../services/store.service';
+import { StoreService } from '../../store/service/store.service';
 import { BehaviorSubject, of } from 'rxjs';
-import { questions$ } from '../../services/statistics.service.spec';
-import { ModalWindowService, ModalWindowState } from '../../services/modal.service';
+import { questions$ } from '../../services/statistics/statistics.service.spec';
+import { ModalWindowService, ModalWindowState } from '../../services/modal-window/modal.service';
 import { QUESTIONS_SIZE } from '../../utils/constants';
 import { RouterTestingModule } from '@angular/router/testing';
-import { ModalRoutes } from '../../utils/modal-routes.enum';
-import { DEFAULT_MODAL_DATA } from '../../utils/modal-data.constants';
-import { StatisticService } from '../../services/statistics.service';
+import { ModalRoutes } from '../../ui-kit/components/modal-window/modal-window.routes.enum';
+import { DEFAULT_MODAL_DATA } from '../../ui-kit/components/modal-window/modal-window.constants';
+import { StatisticService } from '../../services/statistics/statistics.service';
 import { canDeactivateGuard } from '../../guards/can-deactivate.guard';
 import { QUIZ_DATA } from '../../test-data/quiz';
 import { testQuizResult } from '../statistics/statistics.component.spec';
@@ -35,6 +35,9 @@ describe('QuestionComponent', () => {
   let statisticService: Partial<StatisticService>;
 
   let router: Router;
+
+  let nextIndex: number = 2;
+  let prevIndex: number = 1;
 
   beforeEach(async() => {
     storeService = {
@@ -97,14 +100,14 @@ describe('QuestionComponent', () => {
   });
 
   it('should decrement and increment current index on prev or next questions', () => {
-    component.currentIndex$.next(2);
+    component.currentIndex$.next(nextIndex);
     component.prevQuestion();
 
-    expect(component.currentIndex$.value).toBe(1);
+    expect(component.currentIndex$.value).toBe(prevIndex);
 
     component.nextQuestion();
 
-    expect(component.currentIndex$.value).toBe(2);
+    expect(component.currentIndex$.value).toBe(nextIndex);
   });
 
   it('should go to statistic page with /finish path on last question', () => {

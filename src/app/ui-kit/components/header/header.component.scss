@@ -1,0 +1,52 @@
+@keyframes show-animation {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(0.95);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.nav-item-animation {
+  animation: show-animation 500ms ease-in-out;
+
+  &:before {
+    background-color: theme('colors.muted');
+    border-radius: 4px;
+    bottom: -3px;
+    content: '';
+    height: 2px;
+    left: 0;
+    position: absolute;
+    transform-origin: right;
+    transition: width 0.6s ease-in-out;
+    width: 0;
+  }
+
+  &:after {
+    background-color: transparent;
+    bottom: 0;
+    content: '';
+    height: 2px;
+    position: absolute;
+    right: 100%;
+    transform-origin: right;
+    transition: width 0.6s ease-in-out;
+    width: 0;
+  }
+
+  &:hover {
+    &:before {
+      width: 100%;
+    }
+
+    &:after {
+      width: 100%;
+    }
+  }
+}

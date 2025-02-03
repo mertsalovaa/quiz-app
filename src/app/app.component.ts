@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { UIKitModule } from './ui-kit/ui-kit.module';
-import { StatisticService } from './services/statistics.service';
+import { StatisticService } from './services/statistics/statistics.service';
 
 @Component({
   selector: 'app-root',
